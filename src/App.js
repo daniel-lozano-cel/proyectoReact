@@ -1,14 +1,15 @@
+import { BrowserRouter} from 'react-router-dom'
 import './App.css'
-
 import NavBar from './components/NavBar'
-import BottomText from './components/BottomText'
-
+import ItemListContainer from './containers/ItemListContainer'
+import ItemDetailContainer from './containers/itemDetailContainer'
 const App = () =>{
   return(
-    <div>
+    <BrowserRouter>
       <NavBar/>
-      <BottomText/>
-    </div>
+      <ItemDetailContainer/>
+    </BrowserRouter>
+      
   )
 }
 

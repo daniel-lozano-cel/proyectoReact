@@ -1,8 +1,22 @@
-.header{
-  background-color: aqua;
-  height: 100px;
+.container{
+  margin-top:20px;
+  border-style: outset;
+}
+button {
+  margin-right: 10px;
+  border-style: hidden;
+  background-color: rgba(0, 132, 255, 0.61);
+  color: #fff;
 }
 
-.gap{
-  gap: 10px;
+.navTitle{
+  font-size: 32px;
+  text-decoration: none;
+  color: white;
+  margin-right: 40px;
+}
+
+.images {
+  width:25%;
+  height:25%;
 }
