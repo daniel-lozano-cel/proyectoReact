@@ -1,16 +1,26 @@
 import Products from '../components/Item.js'
-import {useEffect, useState} from 'react'
+import {useEffect, useState, useParams} from 'react'
 import {List} from '../components/ItemList'
 
 const ItemListContainer = () =>{
     const[data, setData] = useState([])
+    const {categoryId} = useParams()
 
     //Usando array de productos propio 
-    setTimeout(useEffect(()=>{
-        fetch(2000,List)
-            .then(response => setData(response.results))
+    useEffect(()=>{
+        if(categoryId === 'undefined'){
+            fetch(2000,'https://api.mercadolibre.com/sites/MLA/search?q=microfonos')
+            .then(response => setData(response))
             .catch(error => console.log(error))
-    }, []),2000)
+        } else {
+            fetch(2000,'https://api.mercadolibre.com/sites/MLA/search?q=microfonos')
+            .then(response => response.json())
+            .then(response => setData(response))
+            .then(List.filter(item=> item.categoryId == categoryId))
+            .catch(error => console.log(error))
+        }
+        
+    }, [categoryId]);
     
    
    /*

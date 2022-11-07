@@ -3,18 +3,18 @@ import {useEffect, useState} from 'react'
 import {List} from '../components/ItemList'
 import {customFetch} from '../utils/customFetch'
 import Counter from '../components/ItemCount'
+import { useParams } from 'react-router-dom'
 
 const ItemDetailContainer = (props) =>{
     const[data, setData] = useState({})
     
-    setTimeout(
         useEffect(()=>{
-            fetch(List)
+            fetch(2000,List)
                 .then(response => response.json())
                 .then(response => setData(response.results))
                 .catch(error => console.log(error))
         }, [])
-    , 2000)
+
     
     /*
     setTimeout(
@@ -26,7 +26,6 @@ const ItemDetailContainer = (props) =>{
         }, [])
     , 2000)
     */
-    
 
     return(
         

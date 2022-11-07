@@ -7,14 +7,16 @@ import About from './components/About'
 const App = () =>{
   return(
     <BrowserRouter>
+    <NavBar/>
       <Routes>
-        <Route path="/" element={<ItemDetailContainer/>} /> 
+        <Route path="/" element={<ItemListContainer/>} /> 
+        <Route path="/category/:categoryId" element={<ItemListContainer/>} />
         <Route path="/about" element={<About/>}/>
+        <Route path="/itemDetailContainer" element={<ItemDetailContainer/>} />
       </Routes>
     </BrowserRouter>
       
   )
 }
-/**<Route path='/detail'><ItemDetailContainer/></Route>
-        <Route path='/about'><h1>Soy About</h1></Route> */
+
 export default App;
