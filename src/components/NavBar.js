@@ -11,9 +11,9 @@ const NavBar = () => {
                 </button>
                 <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div className="navbar-nav">
-                        <a className="nav-link" href="#">Categoría 1</a>
-                        <a className="nav-link" href="#">Categoría 2</a>
-                        <a className="nav-link" href="#">Categoría 3</a>
+                        <a className="nav-link" href="#">Zapatos Casuales</a>
+                        <a className="nav-link" href="#">Tennis</a>
+                        <a className="nav-link" href="#">Elegantes</a>
                     </div>
                     <a className="nav-link" href="#">Registro</a>
                     <CartWidget/>

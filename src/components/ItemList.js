@@ -1,5 +1,10 @@
 export const List = [
     {
+        /*
+        1: zapatos normales
+        2: deportivos
+        3: formales y botas
+        * */
         id: 1,
         categoryId: 1,
         title: "Blue Shoes",
