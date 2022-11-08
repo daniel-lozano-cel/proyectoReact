@@ -1,10 +1,10 @@
-
+import Counter from './ItemCount'
 const Detail = (props) =>{
     return(
         <>  {
                 <>
                 <div>
-                    <img src={props.pictureUrl} alt="" />
+                    <img src={props.pictureUrl} alt="" className="images"/>
                 </div>
                 <div>
                     <h2>{props.title}</h2>
@@ -14,6 +14,8 @@ const Detail = (props) =>{
                 </div>
                 </>
             }
+            <Counter/>
+
         </>
     )
 

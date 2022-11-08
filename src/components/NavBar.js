@@ -17,7 +17,7 @@ const NavBar = () => {
                         <Link to='/category/2'><a className="nav-link" href="#">Tennis</a></Link>
                         <Link to='/category/3'><a className="nav-link" href="#">Elegantes</a></Link>
                     </div>
-                    <a className="nav-link" href="#">Registro</a>
+                    <a className="nav-link " href="#">Registro</a>
                     <CartWidget/>
                 </div>
             </div>

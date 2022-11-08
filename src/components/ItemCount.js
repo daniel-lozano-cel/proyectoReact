@@ -24,8 +24,9 @@ const Counter = (props) =>{
         
         <>
             <button onClick={increaseUnit}>+</button>
-            <span>Añadir al carrito: {unit} </span>
+            <span>{unit} </span>
             <button onClick={decreaseUnit} >-</button>
+            <button>Añadir al carrito</button>
             <button onClick={cleanUnit}>Vaciar</button>
         </>
         

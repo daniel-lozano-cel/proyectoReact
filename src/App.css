@@ -1,6 +1,13 @@
+*{
+  margin: 0px;
+  padding: 0px;
+}
+
 .container{
   margin-top:20px;
   border-style: outset;
+  background-color: #fff;
+  padding-right: 0px;
 }
 button {
   margin-right: 10px;
@@ -19,4 +26,13 @@ button {
 .images {
   width:25%;
   height:25%;
+}
+a {
+  text-decoration: none;
+}
+.detailButton{
+  background-color: green;
+  padding: 10px;
+  color: #fff;
+  border-radius: 10px;
 }

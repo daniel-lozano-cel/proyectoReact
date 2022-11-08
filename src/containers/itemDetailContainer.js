@@ -1,19 +1,19 @@
-import Detail from '../components/ItemDetail'
 import {useEffect, useState} from 'react'
 import {List} from '../components/ItemList'
-import {customFetch} from '../utils/customFetch'
-import Counter from '../components/ItemCount'
+import Detail from '../components/ItemDetail'
 import { useParams } from 'react-router-dom'
-
-const ItemDetailContainer = (props) =>{
+import { customFetch } from '../utils/customFetch'
+const ItemDetailContainer = () =>{
     const[data, setData] = useState({})
-    
-        useEffect(()=>{
-            fetch(2000,List)
-                .then(response => response.json())
-                .then(response => setData(response.results))
-                .catch(error => console.log(error))
-        }, [])
+    const {id} = useParams()
+        setTimeout(
+            useEffect(()=>{
+                customFetch(2000, List.find(item => item.id == id))
+                    .then(response => response.json())
+                    .then(response => setData(response.results))
+                    .catch(error => console.log(error))
+            }, [])
+        , 2000)
 
     
     /*
@@ -28,22 +28,22 @@ const ItemDetailContainer = (props) =>{
     */
 
     return(
-        
-            <>
-                <div>
-                    <img src={props.pictureUrl} alt="" />
-                </div>
-                    <div>
-                        <h2>{props.title}</h2>
-                        <h4>{props.price}</h4>
-                        <h3>{props.description}</h3>
-                        <p>Stock disponible: {props.available_quantity}</p>
-                        <Counter></Counter>
-                    </div>
-                
-            </>
-            
+        <>
+             {
+               List.map(item => (
+                    <Detail
+                        key={item.id}
+                        pictureUrl={item.pictureUrl}
+                        title={item.title}
+                        description={item.description}
+                        price={item.price}
+                        available_quantity={item.available_quantity}
+                    />
+                ))
+            }
+        </>
     )
+    
 }
 
 export default ItemDetailContainer;

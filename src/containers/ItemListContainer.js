@@ -1,27 +1,21 @@
 import Products from '../components/Item.js'
-import {useEffect, useState, useParams} from 'react'
+import {useEffect, useState} from 'react'
 import {List} from '../components/ItemList'
+import {useParams} from 'react-router-dom'
+import customFetch from '../utils/customFetch'
 
 const ItemListContainer = () =>{
     const[data, setData] = useState([])
     const {categoryId} = useParams()
-
     //Usando array de productos propio 
-    useEffect(()=>{
-        if(categoryId === 'undefined'){
-            fetch(2000,'https://api.mercadolibre.com/sites/MLA/search?q=microfonos')
-            .then(response => setData(response))
-            .catch(error => console.log(error))
-        } else {
-            fetch(2000,'https://api.mercadolibre.com/sites/MLA/search?q=microfonos')
-            .then(response => response.json())
-            .then(response => setData(response))
-            .then(List.filter(item=> item.categoryId == categoryId))
-            .catch(error => console.log(error))
-        }
-        
+    useEffect(() => {
+        customFetch(2000, List.filter(item => {
+            if (categoryId === undefined) return item;
+            return item.categoryId === parseInt(categoryId)
+        }))
+            .then(result => setData(result))
+            .catch(err => console.log(err))
     }, [categoryId]);
-    
    
    /*
     Consulta a la API
