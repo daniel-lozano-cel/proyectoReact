@@ -33,7 +33,7 @@ const ItemListContainer = () =>{
     return(
         <>
             {
-                List.map(item => (
+                data.map(item => (
                     <Products
                         key={item.id}
                         pictureUrl={item.pictureUrl}
