@@ -15,7 +15,7 @@ const ItemDetailContainer = () => {
     }, []);
     
     return (
-        <Details item={dato} />
+        <Details item={dato} />   
     );
 }
 

@@ -2,7 +2,10 @@
   margin: 0px;
   padding: 0px;
 }
-
+body {
+  font-family: 'Righteous', cursive;
+  background-color: black;
+}
 .container{
   margin-top:20px;
   border-style: outset;
@@ -16,23 +19,52 @@ button {
   color: #fff;
 }
 
-.navTitle{
-  font-size: 32px;
-  text-decoration: none;
-  color: white;
-  margin-right: 40px;
-}
-
 .images {
   width:25%;
   height:25%;
 }
-a {
+a, ul, li{
   text-decoration: none;
+  color: #edf0f1;
 }
+
 .detailButton{
   background-color: green;
   padding: 10px;
   color: #fff;
   border-radius: 10px;
+}
+
+.navbarA{
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 10%;
+  background-color: rgb(0, 27, 116);
+}
+.navLinks{
+  list-style:none;
+}
+.navLinks li{
+  display: inline-block;
+  padding: 0px 20px;
+}
+.navLinks li a{
+  transition: all 0.3s ease 0s;
+}
+
+.navLinks li a:hover{
+  color: #0088a9;
+}
+.btnRegister{
+  padding: 9px 25px;
+  background-color: rgba(0,136,169,1);
+  border:none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+}
+
+.white{
+  color: #fff;
 }

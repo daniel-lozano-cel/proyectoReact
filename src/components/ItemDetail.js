@@ -28,7 +28,7 @@ const Detail = ({item}) =>{
 export default Detail;
 */
 
-const ItemDetail = (item) => {
+const ItemDetail = ({item}) => {
 
 
     return (
@@ -36,13 +36,13 @@ const ItemDetail = (item) => {
             
                 <div>
                     <div>
-                        <img src={item.pictureUrl} alt=""></img>
+                        <img className="images" src={item.pictureUrl} alt=""></img>
                     </div>
                     <div>
-                        <h1>{item.name}</h1>
-                        <h3>{item.description}</h3>
-                        <span>$ {item.cost}</span>
-                        <p>{item.available_quantity}</p>
+                        <h1 className="white"  >  {item.name}</h1>
+                        <h3 className="white"  >{item.description}</h3>
+                        <span  className="white" >$ {item.cost}</span>
+                        <p className="white" > {item.available_quantity}</p>
                     </div>
                 </div>
                 <Counter/>

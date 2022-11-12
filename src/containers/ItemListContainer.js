@@ -36,6 +36,7 @@ const ItemListContainer = () =>{
                 data.map(item => (
                     <Products
                         key={item.id}
+                        id={item.id}
                         pictureUrl={item.pictureUrl}
                         title={item.title}
                         description={item.description}
