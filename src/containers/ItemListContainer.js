@@ -1,10 +1,10 @@
-import Products from '../components/Item.js'
 import {useEffect, useState} from 'react'
-import {List} from '../components/ItemList'
+import {List} from '../utils/data'
 import {useParams} from 'react-router-dom'
 import customFetch from '../utils/customFetch'
+import ItemList from '../components/ItemList.js'
 
-const ItemListContainer = () =>{
+const ItemListContainer = (item) =>{
     const[data, setData] = useState([])
     const {categoryId} = useParams()
     //Usando array de productos propio 
@@ -15,7 +15,7 @@ const ItemListContainer = () =>{
         }))
             .then(result => setData(result))
             .catch(err => console.log(err))
-    }, [categoryId]);
+    }, [data]);
    
    /*
     Consulta a la API
@@ -31,24 +31,27 @@ const ItemListContainer = () =>{
   */
 
     return(
-        <>
-            {
-                data.map(item => (
-                    <Products
-                        key={item.id}
-                        id={item.id}
-                        pictureUrl={item.pictureUrl}
-                        title={item.title}
-                        description={item.description}
-                        price={item.price}
-                        available_quantity={item.available_quantity}
-                    />
-                ))
-            }
-            
-        </>
+
+        <div className='listContainer' >
+            <ItemList/> 
+        </div>
     )
     
 }
 
 export default ItemListContainer
+ /*
+                {
+                    data.map(item => (
+                        <Products
+                            key={item.id}
+                            id={item.id}
+                            pictureUrl={item.pictureUrl}
+                            title={item.title}
+                            description={item.description}
+                            price={item.price}
+                            available_quantity={item.available_quantity}
+                        />
+                    ))
+                }
+            */

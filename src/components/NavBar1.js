@@ -5,19 +5,18 @@ import CartWidget from './CartWidget.js';
 const NavBar1 = () =>{
     return (
         <>
-            <div className="navbarA">
+            <div className='navbar' >
                 <h2>
                     <Link to='/'><a href="#" >SHOP</a></Link>
                 </h2>
                 <nav>
-                    <ul className='navLinks' >
+                    <ul className='navLinks'>
                         <Link to='/category/1' ><li><a href="#">Zapatos</a></li></Link>
                         <Link to='/category/2' ><li><a href="#">Tennis</a></li></Link>
                         <Link to='/category/3' ><li><a href="#">Elegantes</a></li></Link>
                     </ul>
                 </nav>
                 <div>
-                    <Link to='register' ><a className="btnRegister" href="#" >Registro</a></Link>
                     <CartWidget/>
                 </div>
             </div>

@@ -1,10 +1,11 @@
 import { useState} from 'react'
-import {List} from '../components/ItemList'
+import '../App.css'
+import React from 'react'
+import Checkout from './Checkout'
 
-
-const Counter = (props) =>{
+const ItemCount = ({ props,  onAdd }) =>{
     const [unit, setUnit] = useState(0);
-        
+    
     const increaseUnit = () =>{
         setUnit(unit+1);
         if (unit >= props.available_quantity){
@@ -20,17 +21,25 @@ const Counter = (props) =>{
     const cleanUnit = () => {
         setUnit(unit - unit);
     }
+
+    const [show,setShow]=useState(true)   
+      
     return(
-        
-        <>
-            <button onClick={increaseUnit}>+</button>
-            <span>{unit} </span>
-            <button onClick={decreaseUnit} >-</button>
-            <button>Añadir al carrito</button>
-            <button onClick={cleanUnit}>Vaciar</button>
+        <>  
+            {
+                show?
+                    <div>
+                        <button onClick={increaseUnit}>+</button>
+                        <span>{unit} </span>
+                        <button onClick={decreaseUnit} >-</button>
+                        <button onClick={()=>onAdd(unit)} >Añadir al carrito</button>
+                        <button onClick={cleanUnit}>Vaciar</button>
+                    </div>
+                : <Checkout/>
+            }
         </>
         
     )
 
 }
-export default Counter;
+export default ItemCount;
